@@ -1,0 +1,253 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+header {
+    /* background-color: #040d22; */
+    position: relative;
+}
+
+header .forms input.form-control{
+   color: white;
+   background-color: rgba(255,255,255,.15); /*반투명도 a->투명도 의미*/
+   border-color: rgba(255,255,255,.3); /* 0(완전 투명) -> 1(완전 불투명)*/
+}
+
+header .forms input.form-control::placeholder{ /* : -> 가상클래스선택자 ::->가상요소선택자 
+                                                placeholder -> 힌트(Search GitHub)*/
+    color: rgba(255,255,255,.6); /* 힌트색 제어 */
+}
+
+header [data-bs-toggle="offcanvas"]{ /* 속성선택자 */
+    display: none; /*화면에 안나타나게 하기*/
+}
+
+header .offcanvas .list-group-item{
+    padding: 16px;
+}
+
+header .offcanvas .list-group-item a {
+    color: black;
+    text-decoration: none;
+}
+
+header .offcanvas .list-group-item a:hover{
+    text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+    header .logo {
+        flex-grow: 1;
+    }
+    header .nav, /*header의 nav-item 사라지게*/
+    header .forms input.form-control, /*"Search GitHub 사라지게*/
+    header .forms .btn-link { /*"Sign in</button> 사라지게*/
+        display: none;
+    }
+
+    header [data-bs-toggle="offcanvas"]{
+        display: block; /* 992이하일때 화면에 보여지게함 */
+    }
+}
+
+section.hero{
+    background-color: #040d22;
+    position: relative;
+    overflow: hidden;
+}
+
+section.hero .container {
+    padding-top: 160px;
+    padding-bottom: 160px;
+    position: relative;
+}
+
+section.hero .headline h1{
+    font-size: 68px;
+    font-weight: 700; /* 폰트 두께 (html에서 300, 700 두개 가져왔음)*/
+    letter-spacing: -2px; /*글자사이 간격*/
+}
+section.hero .headlin h2{
+    font-size: 26px;
+ 
+}
+
+section.hero img.globe {
+    width:900px;
+    position: absolute;
+    top: -5%;
+    left: 46%;
+}
+
+section.hero img.glow{
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+section.hero .curve {
+    width: 100%;
+    transform: scaleY(.5);
+    transform-origin: bottom;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+section.youtube{
+
+}
+section.youtube .container {
+    padding-top: 90px;
+    padding-bottom: 70px;
+    position: relative;
+}
+section.youtube img.astronaut {
+    width: 480px;
+    position: absolute;
+    top: -420px;
+    right: 0;
+}
+section.youtube .ratio{
+    border-radius:10px;
+    overflow:hidden;
+    /* background-color: black */
+}
+
+@media (max-width: 768px){
+    section.youtube img.astronaut{
+        display: none;
+    }
+}
+
+section.features{
+
+}
+section.features .container{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+section.features .card {
+    color: #637597;
+    border: none; /*테두리선 없애기*/
+}
+
+section.features .card img {
+    padding: 30px 60px;/* padding-top: 30px;
+                        padding-bottom: 30px;
+                        padding-left: 60px;
+                        padding-right: 60px; */
+    
+}
+
+@media (max-width: 576px){
+    section.features .card img {
+        padding: 20px 30px;
+    }
+}
+
+section.map .container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    color: #627597;
+
+}
+
+section.map h1 {
+    font-size: 44px;
+    font-weight: 700;
+}
+
+section.map p {
+    font-size: 24px;
+}
+
+#map { /*section.map 조상요소 작성필요x, id는 고유하기때문*/
+    background-color: black;
+    height: 500px;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 10px;
+    z-index: 1; /*밑에 넣을 이미지가 덮어쓰워지는것을 방지, 1정도 사용자와 가깝게 위로 띄울수있다*/
+    
+} 
+
+footer{
+    background-color: #040d22;
+    position: relative;
+    margin-top: 20%;
+}
+
+footer .curve{
+    width: 100%;
+    transform: scale(1,-1); /* y-축을 뒤집는다 -> 위아래반전 */
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+
+footer .container{
+
+}
+
+footer img.illustration{
+    width: 100%;
+    margin-top: -33%;
+    margin-bottom: 50px;
+    transform: scale(-1,1); /*x-출 뒤집는다 -> 좌우반전*/
+}
+
+footer img.logo{
+    opacity: .4;
+}
+
+footer h5 {
+    font-weight: 700;
+    color: rgba(255, 255, 255, .4);
+    margin-bottom: 20px;
+}
+
+footer ul li{
+    margin-bottom: 10px;
+}
+
+footer ul li a{
+    color: rgba(255, 255, 255, .4); /*글씨색-> <a href ="#>text</a> */
+    text-decoration: none;
+    transition: .3s; /*hover->색이 자연스럽게 바뀐다*/
+}
+
+footer ul li a:hover{ /*마우스를 올리게 되면*/
+    color: white;
+}
+
+footer .site-links{
+    margin: 0;                 
+    margin-top: 60px;
+    padding: 20px;
+    background-color: rgba(255,255,255,.05);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer .site-links li{
+    color: rgba(255,255, 255, .4);
+    margin: 0; /*초기화*/
+    margin-right: 20px;
+}
+
+footer .site-links li:last-child{
+    margin-right: 0;
+}
+@media(max-width:992px){
+    footer{
+        text-align: center; /*글자 가운데 정렬*/
+    }
+    footer img.logo{
+        margin-bottom: 50px; /*밑으로 외부여백*/
+    }
+}
